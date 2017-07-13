@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- The purpose of this project is to simulate an Electronics Health Records web application. There will be a validated Log-In page and a page for entry of patient information. The goal is to set up the page such that upon successful validation of log-in credentials, the user will be directed to a page for entering patient information which could then be submitted to a database. I chose this form because I would like to create a fully functioning Electronic Health Records system in the future. -David M. Hahn-->
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>EHR System</title>
+    <!-- linking the relevant JavaScript document and CSS document -->
+    <link rel="stylesheet" type="text/css" href="FinalProject_EHR_DMHahn.css">
+    <script type="text/javascript" src="FinalProject_EHR_DMHahn.js">
+    </script>
+
+</head>
+
+<body>
+    <form action="#">
+        <div class="fullpage">
+            <h1>Please enter your Log-In information</h1>
+            <!-- setting up the log-in information in a table format -->
+            <table id="table1" border="1">
+                <tr>
+                    <td class="label_col">User ID:</td>
+                    <td class="input_col"><input name="userID" id="userID" type="text" required onblur="validateUserID();"></td>
+                    <td class="feedback_col"><span id="userIDPrompt">&nbsp;</span></td>
+                </tr>
+                <tr>
+                    <td class="label_col">User password:</td>
+                    <td class="input_col"><input name="password" type="password" id="password1" required onblur="validatePassword();"></td>
+                    <td class="feedback_col"><span id="passwordPrompt1">&nbsp;</span></td>
+                </tr>
+                <tr>
+                    <td class="label_col">Re-enter User password:</td>
+                    <td class="input_col"><input name="password" type="password" id="password2" required onblur="validateMatch();"></td>
+                    <td class="feedback_col"><span id="passwordPrompt2">&nbsp;</span></td>
+                </tr>
+            </table>
+            <br>
+            <input class="loginbutton" type="button" value="Submit" onclick="validateLogin();" />
+        </div>
+        <p class="para1">
+            <!-- the password recovery and new user registration links are broken right now, they don't lead anywhere. -->
+            <a href="passwordrecovery.html" target="_blank">
+                [Password Recovery]</a>
+            <a href="newuserregister.html" target="_blank">[New User Registration]</a>
+        </p>
+    </form>
+    <div>
+        <img src="electronichealthrecords.jpg" alt="Electronic Health Records Image">
+    </div>
+</body>
+
+</html>

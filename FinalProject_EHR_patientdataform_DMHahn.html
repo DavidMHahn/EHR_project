@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- This is the main document for entering patient information and treatment notes. This page should launch in a new window when the log-in formation has been validated and submitted. -->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Patient Data Form</title>
+    <link rel="stylesheet" type="text/css" href="FinalProject_EHR_DMHahn.css">
+    <script type="text/javascript" src="FinalProject_EHR_DMHahn.js">
+    </script>
+</head>
+
+<body>
+    <!-- form for submitting patient data -->
+    <form action="#" onsubmit="validateForm();">
+        <div class="fullpage">
+            <h1>Please Enter Patient Data</h1>
+
+            <!-- Name Fields -->
+            First name:<br>
+            <input type="text" name="firstName" id="firstName" onblur="validateFirstName();" required>
+            <span id="firstNamePrompt">&nbsp;</span>
+            <br> Last name:<br>
+            <input type="text" name="lastName" id="lastName" onblur="validateLastName();" required>
+            <span id="lastNamePrompt">&nbsp;</span>
+            <br>
+
+            <!-- Birth date field -->
+            Birth date:<br>
+            <input type="date" name="birthDate" id="birthDate" value="1999-12-31" required onblur="validateBirthDate();">
+            <span id="birthDatePrompt">&nbsp;</span><br>
+
+            <!-- Address fields -->
+            Address:
+            <br>
+            <input type="text" name="address" id="address" required onblur="validateAddress();"><span id="addressPrompt">&nbsp;</span><br> City:
+            <br>
+            <input type="text" name="city" id="city" onblur="validateCity();" required>
+            <span id="cityPrompt">&nbsp;</span>
+            <br> State:
+            <br>
+            <input type="text" name="state" id="state" onblur="validateState();" required>
+            <span id="statePrompt">&nbsp;</span>
+            <br> Zip Code:<br>
+            <input type="number" name="zipCode" id="zipCode" onblur="validateZipcode();" required><span id="zipCodePrompt">&nbsp;</span>
+        </div>
+
+        <!-- Additional Patient Information -->
+        <div class="patientInfo">
+            <p>
+                Gender:<br>
+                <input type="radio" name="gender" value="Male" checked>Male<br>
+                <input type="radio" name="gender" value="Female">Female<br>
+                <input type="radio" name="gender" value="Nonbinary">Nonbinary<br>
+            </p>
+        </div>
+
+        <!-- Treatment Information and Details -->
+        <div class="patientInfo">
+            Treatment Area:<br>
+            <input type="checkbox" name="area" value="Front">Front<br>
+            <input type="checkbox" name="area" value="Back">Back<br>
+            <input type="checkbox" name="area" value="Head">Head<br>
+            <input type="checkbox" name="area" value="Other">Other - Specify area:
+            <input type="text" name="area"><br>
+        </div>
+
+        <div class="patientInfo">
+            <p>
+                Please enter treatment notes below:<br>
+                <textarea name="treatmentInfo" rows="10" cols="40">
+            </textarea>
+                <br>
+                <!-- Buttons to submit data, or reset the patient data form -->
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </p>
+        </div>
+
+    </form>
+
+</body>
+
+</html>
